@@ -4,7 +4,8 @@ import dummynotes from '../dummy_notes'
 import { Link } from 'react-router-dom';
 import { BsPlusLg } from 'react-icons/bs'
 import NodeItem from '../component/NodeItem';
-const Notes = () => {
+import CreateNote from './CreateNote';
+const Notes = ({ notes }) => {
   return (
     <section>
       <header className='notes__header'>
@@ -18,11 +19,11 @@ const Notes = () => {
       </header>
       <div className='notes__container'>
         {
-          dummynotes.map(note => <NodeItem 
-           key={note.id} note={note} />)
+          notes.map(note => <NodeItem
+            key={note.id} note={note} />)
         }
       </div>
-      <Link className='btn add__btn'>
+      <Link className='btn add__btn' onClick={CreateNote}>
         <BsPlusLg />
       </Link>
     </section>
