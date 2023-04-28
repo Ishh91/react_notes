@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { IoIosArrowBack } from "react-icons/io"
 import { useState } from 'react'
-import {v4 as uuid} from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 import useCreateDate from '../component/useCreateDate';
 
@@ -13,8 +13,8 @@ const CreateNote = (setNotes) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && details) {
-      const note = {id: uuid(), title, details,date}
-      setNotes(prevNotes=>[note, ...prevNotes])
+      const note = { id: uuid(), title, details, date }
+      setNotes(prevNotes => [note, ...prevNotes])
       console.log(note);
     }
   }

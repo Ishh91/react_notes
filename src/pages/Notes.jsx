@@ -1,11 +1,18 @@
 import React from 'react'
 import { CiSearch } from 'react-icons/ci';
-import dummynotes from '../dummy_notes'
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { BsPlusLg } from 'react-icons/bs'
 import NodeItem from '../component/NodeItem';
 import CreateNote from './CreateNote';
 const Notes = ({ notes }) => {
+
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = '/CreateNote';
+    navigate(path);
+  }
+  
   return (
     <section>
       <header className='notes__header'>
@@ -23,7 +30,7 @@ const Notes = ({ notes }) => {
             key={note.id} note={note} />)
         }
       </div>
-      <Link className='btn add__btn' onClick={CreateNote}>
+      <Link className='btn add__btn' onClick={routeChange}>
         <BsPlusLg />
       </Link>
     </section>
