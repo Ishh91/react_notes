@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { IoIosArrowBack } from "react-icons/io"
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid';
@@ -10,12 +10,14 @@ const CreateNote = (setNotes) => {
   const [title, setTitle] = useState('')
   const [details, setDetails] = useState('')
   const date = useCreateDate();
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title && details) {
       const note = { id: uuid(), title, details, date }
       setNotes(prevNotes => [note, ...prevNotes])
       console.log(note);
+      navigate('/')
     }
   }
 
