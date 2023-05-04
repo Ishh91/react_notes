@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { BsPlusLg } from 'react-icons/bs'
 import NodeItem from '../component/NodeItem';
 import CreateNote from './CreateNote';
-const Notes = ({ notes }) => {  
+const Notes = ({ notes }) => {
   return (
     <section>
       <header className='notes__header'>

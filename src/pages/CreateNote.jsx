@@ -2,9 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { IoIosArrowBack } from "react-icons/io"
 import { useState } from 'react'
 import { v4 as uuid } from 'uuid';
-
 import useCreateDate from '../component/useCreateDate';
-
 const CreateNote = (setNotes) => {
 
   const [title, setTitle] = useState('')
@@ -20,8 +18,6 @@ const CreateNote = (setNotes) => {
       navigate('/')
     }
   }
-
-
   return (
     <section>
       <header className='create-note__header'>
